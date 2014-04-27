@@ -41,7 +41,7 @@ public class MainFrame extends JFrame{
 		LoginPanel login = new LoginPanel();
 		frame.add(login);
 	//	frame.add(login);
-		//SignUpPanel p = new SignUpPanel();
+	//	SignUpPanel p = new SignUpPanel();
 		//frame.add(p);
 		frame.start();
 		frame.pack();

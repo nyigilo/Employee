@@ -269,6 +269,19 @@ public class SignUpPanel extends JPanel implements ActionListener
 
 		}
 	} 
+	public static void createAndShowGUI() {
+		//Create and set up the window.
+		JFrame frame = new JFrame("Edward Bassan");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//Create and set up the content pane.
+		SignUpPanel newContentPane = new SignUpPanel();
+		//newContentPane.setOpaque(true); //content panes must be opaque
+		frame.setContentPane(newContentPane);
+
+		//Display the window.
+		frame.pack();
+		frame.setVisible(true);
+	}
 	private boolean validateSignUp(){
 		boolean field = false;
 		if(firstnamefield.getText().equals("") && lastnamefield.getText().equals("")
