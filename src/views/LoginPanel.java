@@ -41,7 +41,7 @@ import controllers.Database;
 public class LoginPanel extends JPanel {
 
 	private static final int WIDTH = 400;
-	private static final int HEIGHT = 100;
+	private static final int HEIGHT = 400;
 
 
 
@@ -67,12 +67,12 @@ public class LoginPanel extends JPanel {
 	 * Creates the gui for the login.
 	 */
 	private void initPanel() {
-		USERNAME_LABEL.setBounds(8, 30, 150, 20);
-		PASSWORD_LABEL.setBounds(8, 65, 150, 20);
-		USERNAME_FIELD.setBounds(70, 30, 150, 20);
-		PASSWORD_FIELD.setBounds(70, 65, 150, 20);
-		LOGIN.setBounds(75, 100, 60, 20);
-		SIGN_UP.setBounds(155,100, 60, 20);
+		USERNAME_LABEL.setBounds(150, 30, 150, 20);
+		PASSWORD_LABEL.setBounds(150, 65, 150, 20);
+		USERNAME_FIELD.setBounds(230, 30, 150, 20);
+		PASSWORD_FIELD.setBounds(230, 65, 150, 20);
+		LOGIN.setBounds(235, 100, 60, 20);
+		SIGN_UP.setBounds(315,100, 60, 20);
 
 
 		PASSWORD_FIELD.setPreferredSize(new Dimension(4, 5));
@@ -80,6 +80,20 @@ public class LoginPanel extends JPanel {
 			public void actionPerformed(final ActionEvent the_e){
 				LOGIN.doClick();
 			}
+		});
+		
+		SIGN_UP.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				 Window w = SwingUtilities.getWindowAncestor(LoginPanel.this);
+			      w.setVisible(false);
+			      javax.swing.SwingUtilities.invokeLater(new Runnable() {
+						public void run() {
+							SignUpPanel.createAndShowGUI();
+						}
+					});
+			}	
 		});
 		LOGIN.addActionListener(new ActionListener(){
 			public void actionPerformed(final ActionEvent the_e){
@@ -165,8 +179,8 @@ public class LoginPanel extends JPanel {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new LoginPanel();
+      new LoginPanel();
+		 
 		
 	}
 }
